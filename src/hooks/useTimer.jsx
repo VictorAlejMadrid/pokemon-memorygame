@@ -9,7 +9,7 @@ export default function useTimer() {
   }, []);
 
   function startTimer() {
-    intervalRef.current = setInterval(function () {
+    intervalRef.current = setInterval(function () { // useRef da pra usar em funções!
         increaseSeconds();
       }, 1000);
     return () => {
