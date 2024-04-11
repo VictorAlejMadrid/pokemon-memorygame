@@ -1,17 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function useTimer() {
   const [timer, setTime] = useState(0);
-  const [stop, setStop] = useState(false);
-  let interval = null;
-  let newTimer = timer;
+  const intervalRef = useRef(null);
 
   useEffect(() => {
     startTimer();
   }, []);
 
   function startTimer() {
-    interval = setInterval(function () {
+    intervalRef.current = setInterval(function () {
         increaseSeconds();
       }, 1000);
     return () => {
@@ -24,9 +22,8 @@ export default function useTimer() {
   }
 
   function stopTimer() {
-    setStop(true);
-    clearInterval(interval);
-    interval = null;
+    clearInterval(intervalRef.current);
+    intervalRef.current = null;
   }
 
   return [timer, stopTimer];
