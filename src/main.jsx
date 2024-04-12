@@ -8,7 +8,7 @@ import { GlobalStyle } from "./theme/GlobalStyle.jsx";
 import { theme } from "./theme/colors.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <React.StrictMode> 
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <App />
