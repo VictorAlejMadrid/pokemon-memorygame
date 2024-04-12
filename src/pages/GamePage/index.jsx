@@ -1,19 +1,22 @@
-import Header from "../../components/Header";
-import CardContainer from "../../components/CardContainer";
 import { Section } from "./styles";
 
-import useCardsArray from "../../hooks/useCardsArray";
+import Header from "../../components/Header";
+import CardContainer from "../../components/CardContainer";
+import Timer from "../../components/Timer";
+
+import useGameAplication from "../../hooks/useGameApplication";
 
 export default function GamePage(props) {
   const { homeSettings } = props;
-  const {dificult, cardCount} = homeSettings;
+  const { cardCount, dificult } = homeSettings;
 
-  const cards = useCardsArray(cardCount);
+  const [cards, handleClick] = useGameAplication(cardCount);
 
   return (
     <Section>
       <Header dificult={dificult} />
-      <CardContainer cards={cards} cardCount={cardCount} />
+      <Timer />
+      <CardContainer handleClick={handleClick} cards={cards} cardCount={cardCount} />
     </Section>
   );
 }

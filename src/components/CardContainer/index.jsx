@@ -1,14 +1,15 @@
-import Card from "../Card";
 import { BackContainer, Container } from "./styles";
 
+import Card from "../Card";
+
 export default function CardContainer(props) {
-  const { cards, cardCount } = props;
+  const { cards, cardCount, handleClick } = props;
 
   return (
     <BackContainer>
       <Container>
         {cards.map((card, index) => (
-          <Card key={index} card={card} cardCount={cardCount} />
+          <Card handleClick={handleClick} key={index} card={card} cardCount={cardCount} />
         ))}
       </Container>
     </BackContainer>

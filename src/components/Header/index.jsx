@@ -7,7 +7,6 @@ export default function Header(props) {
   return (
     <HeaderContainer>
       <h1>Jogo da memória</h1>
-        <Timer />
     </HeaderContainer>
   );
 }

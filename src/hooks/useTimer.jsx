@@ -15,7 +15,8 @@ export default function useTimer() {
 
   function startTimer() {
     if (intervalRef != undefined) {
-      intervalRef.current = setInterval(function () { // useRef da pra usar em funções!
+      intervalRef.current = setInterval(function () {
+        // useRef da pra usar em funções!
         increaseSeconds();
       }, 1000);
     }
@@ -30,5 +31,13 @@ export default function useTimer() {
     intervalRef.current = null;
   }
 
-  return [timer, stopTimer];
+  function transformIntoString() {
+    let seconds = (timer % 60).toString();
+    let minutes = Math.floor(timer / 60);
+    let minutesString = minutes > 0 ? (minutes < 10 ? "0" + minutes : minutes.toString()) : "00";
+    let secondsString = seconds >= 10 ? seconds : '0' + seconds;
+    return [minutesString, secondsString];
+  }
+
+  return [transformIntoString(), stopTimer];
 }

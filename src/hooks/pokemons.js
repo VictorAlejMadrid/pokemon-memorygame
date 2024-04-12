@@ -30,4 +30,6 @@ export const pokemons = [
   "sprigatito",
   "squirtle",
   "tinkaton",
-];
+].map((pokemon, index) => {
+  return { id: index + 1, name: pokemon, clicked: false };
+});

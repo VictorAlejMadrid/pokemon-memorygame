@@ -20,7 +20,13 @@ export default function useCardsArray(cardCount) {
       allCards.splice(index, 1);
     }
 
-    const array = [...newCards, ...newCards];
+    const array = [...newCards, ...newCards].map((card, index) => {
+      return {
+        ...card,
+        index: index + 1
+      };
+    });
+    
     setCards(randomize(array));
   }
 
