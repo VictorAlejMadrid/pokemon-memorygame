@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CardWrapper = styled.div`
+  pointer-events: ${(props) => props.$clickable ? 'auto' : 'none'};
   position: relative;
   width: ${(props) => (props.$cardCount >= 15 ? "100px" : "175px")};
   height: ${(props) => (props.$cardCount >= 15 ? "140px" : "245px")};
@@ -38,7 +39,7 @@ export const CardBackSide = styled.div`
   background-size: cover;
   transform: ${(props) => (props.$clicked ? `rotateY(0deg)` : `rotateY(-180deg)`)};
   transition: transform 0.5s ease;
-  
+
   @media screen and (max-width: 1000px) {
     width: 100px;
     height: 140px;

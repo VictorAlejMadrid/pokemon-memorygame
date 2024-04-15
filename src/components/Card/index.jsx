@@ -1,24 +1,14 @@
+import useHandleCard from "../../hooks/useHandleCard";
 import { CardFrontSide, CardBackSide, CardWrapper } from "./styles";
 
-import { useState } from "react";
-
 export default function Card(props) {
-  const { card, cardCount, handleClick } = props;
-  const [clicked, setClicked] = useState(false);
-
-  function allTogether() {
-    setClicked(true);
-    handleClick(card);
-  }
+  const { card, cardCount, checkCards, equal } = props;
+  const [clicked, clickable, handleClick] = useHandleCard(checkCards, card, equal);
 
   return (
-    <CardWrapper $cardCount={cardCount}>
-      <CardFrontSide
-        onClick={() => allTogether()}
-        $cardCount={cardCount}
-        $clicked={clicked}
-      />
-      <CardBackSide onClick={() => allTogether()} $pokemon={card.name} $cardCount={cardCount} $clicked={clicked} />
+    <CardWrapper $clickable={clickable} $cardCount={cardCount}>
+      <CardFrontSide onClick={() => handleClick()} $cardCount={cardCount} $clicked={clicked} />
+      <CardBackSide $pokemon={card.name} $cardCount={cardCount} $clicked={clicked} />
     </CardWrapper>
   );
 }
