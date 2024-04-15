@@ -31,7 +31,7 @@ export default function useTimer() {
     intervalRef.current = null;
   }
 
-  function transformIntoString() {
+  function getValues() {
     let seconds = (timer % 60).toString();
     let minutes = Math.floor(timer / 60);
     let minutesString = minutes > 0 ? (minutes < 10 ? "0" + minutes : minutes.toString()) : "00";
@@ -39,5 +39,5 @@ export default function useTimer() {
     return [minutesString, secondsString];
   }
 
-  return [transformIntoString(), stopTimer];
+  return [getValues(), stopTimer];
 }

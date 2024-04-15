@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardWrapper = styled.div`
-  pointer-events: ${(props) => (props.$clickable ? "auto" : "none")};
+  pointer-events: ${(props) => (props.$visible? props.$clickable ? "auto" : "none" : "none")};
   opacity: ${(props) => (props.$visible ? "1" : "0.2")};
   position: relative;
   width: ${(props) => (props.$cardCount >= 15 ? "100px" : "175px")};

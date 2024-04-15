@@ -9,6 +9,7 @@ export default function useHandleCard(checkCards, card, equal) {
     setClickable(true);
     if (equal == true) {
       setClickable(false);
+
       new Promise(() => {
         setTimeout(() => {
           setVisibility();

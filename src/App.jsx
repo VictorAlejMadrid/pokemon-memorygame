@@ -1,7 +1,7 @@
-import { useState } from "react";
-
-import Home from "./pages/Home";
 import GamePage from "./pages/GamePage";
+import Home from "./pages/Home";
+
+import { useState } from "react";
 import { useHomeSettings } from "./hooks/useHomeSettings";
 
 export default function App() {
@@ -23,5 +23,4 @@ export default function App() {
       )}
     </>
   );
-  // return <GamePage />
 }
