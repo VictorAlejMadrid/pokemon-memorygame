@@ -4,38 +4,25 @@ import Header from "../../components/Header";
 import CardContainer from "../../components/CardContainer";
 import Timer from "../../components/Timer";
 
-import useGameAplication from "../../hooks/useGameApplication";
 import useCardsArray from "../../hooks/useCardsArray";
-import useTimer from "../../hooks/useTimer";
-import { useState } from "react";
-import PontuationPage from "../Pontuations";
+import useGameStart from "../../hooks/useGameStart";
+import FinishModal from "../../components/FinishModal";
+import useCheckGameStatus from "../../hooks/useCheckGameStatus";
 
 export default function GamePage(props) {
-  const { homeSettings } = props;
+  const { homeSettings, time, startTimer, equal, checkCards, resetGame, gameEnded, setNewPlayer, gameTries } = props;
   const { cardCount, dificult } = homeSettings;
-  const [temporary, setTemporary] = useState(false);
 
   const cards = useCardsArray(cardCount);
-  const [[minutes, seconds], stopTimer] = useTimer();
-  const [equal, gameTries, checkCards] = useGameAplication(cardCount);
-  const players = [{name: 'victor', pontuation: 10000}, {name: 'lucas', pontuation: 5000}];
+  useGameStart(startTimer, resetGame, cardCount );
+  const finishVisibility = useCheckGameStatus(gameEnded, setNewPlayer);
 
   return (
-    <>
-      {temporary ? (
-        <Section>
-          <Header dificult={dificult} />
-          <Timer minutes={minutes} seconds={seconds} />
-          <CardContainer
-            equal={equal}
-            checkCards={checkCards}
-            cards={cards}
-            cardCount={cardCount}
-          />
-        </Section>
-      ) : (
-        <PontuationPage players={players}/>
-      )}
-    </>
+    <Section>
+      <Header dificult={dificult} />
+      <Timer time={time} />
+      <CardContainer equal={equal} checkCards={checkCards} cards={cards} cardCount={cardCount} />
+      {finishVisibility ? <FinishModal homeSettings={homeSettings} gameTries={gameTries} /> : null}
+    </Section>
   );
 }

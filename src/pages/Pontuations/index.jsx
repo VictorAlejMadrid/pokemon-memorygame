@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import { Button } from "../Home/styles";
 import { Container, ListContainer, ListLabels, Section } from "./styles";
 
 export default function PontuationPage(props) {
-    const { players } = props;
+  const { playerList } = props;
   
   return (
     <Section>
@@ -13,16 +14,18 @@ export default function PontuationPage(props) {
             <h3>Nome</h3>
             <span>Pontuação</span>
           </ListLabels>
-          {players.map((player) => {
-            return(
-                <li>
-                    <h3>{player.name}</h3>
-                    <span>{player.pontuation}</span>
-                </li>
-            )
+          {playerList.map((player, index) => {
+            return (
+              <li key={index}>
+                <h3>{player.name}</h3>
+                <span>{player.score}</span>
+              </li>
+            );
           })}
         </ListContainer>
-        <Button>Voltar à página inicial</Button>
+        <Link to="/">
+          <Button>Voltar à página inicial</Button>
+        </Link>
       </Container>
     </Section>
   );

@@ -2,16 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { ThemeProvider } from "styled-components";
-import App from "./App.jsx";
 
 import { GlobalStyle } from "./theme/GlobalStyle.jsx";
 import { theme } from "./theme/colors.jsx";
+import AppRoutes from "./AppRoutes.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode> 
+  <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <App />
+      <AppRoutes />
     </ThemeProvider>
   </React.StrictMode>
 );
