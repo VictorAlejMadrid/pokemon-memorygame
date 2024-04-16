@@ -1,4 +1,4 @@
-import PontuationPage from "./pages/Pontuations";
+import Scores from "./pages/Scores";
 import GamePage from "./pages/GamePage";
 import Home from "./pages/Home";
 
@@ -47,7 +47,7 @@ export default function AppRoutes() {
             />
           }
         />
-        <Route path="scores" element={<PontuationPage playerList={playerList} />} />
+        <Route path="scores" element={<Scores playerList={playerList} />} />
         <Route path="*" element={<div>erro</div>} />
       </Routes>
     </HashRouter>

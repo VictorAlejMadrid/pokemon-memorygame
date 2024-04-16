@@ -8,7 +8,7 @@ export default function useSetPontuation(gameTries, time, homeSettings) {
     const { name, dificult } = homeSettings;
 
     let playerScore = getPlayerScore(gameTries, time, dificult);
-    setPlayerList([...playerList, { name, score: playerScore }]);
+    setPlayerList([...playerList, { name, score: playerScore }].sort((a, b) => b.score - a.score));
   }
 
   return [playerList, setNewPlayer];

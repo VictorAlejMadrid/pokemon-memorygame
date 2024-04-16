@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export default function useGameAplication(cardCount, stopTimer) {
   const prevCard = useRef(null);

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export default function useTimer() {
   // estrutura feita por mim, aprimorada pelo copilot após periodo considerado de tentativas falhas por não utilizar o useRef
@@ -6,6 +6,8 @@ export default function useTimer() {
   const intervalRef = useRef(null);
 
   function startTimer() {
+    setTime(0);
+
     if (intervalRef != undefined) {
       intervalRef.current = setInterval(function () {
         // useRef da pra usar em funções!

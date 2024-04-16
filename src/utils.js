@@ -39,36 +39,42 @@ export function randomize(arr) {
 
 export function getPlayerScore(gameTries, time, dificult) {
   const [minutes, seconds] = time;
+  const { tries, right } = gameTries;
+
+  let maxTimeScore = 10000;
+  let maxTriesScore = 10000;
 
   let timeMultiplier = 0;
-  let cardMultiplier = 0;
   let triesMultiplier = 0;
 
   switch (dificult) {
     case "Fácil":
-      timeMultiplier = 0.5;
-      cardMultiplier = 1;
-      triesMultiplier = 0.5;
+      maxTimeScore = 2000;
+      maxTriesScore = 2500;
+      timeMultiplier = 75 - (right * 2);
+      triesMultiplier = 200 - (right * 10);
       break;
     case "Médio":
-      timeMultiplier = 0.7;
-      cardMultiplier = 1.5;
-      triesMultiplier = 0.7;
+      maxTimeScore = 4000;
+      maxTriesScore = 7500;
+      timeMultiplier = 50 - (right * 0.75);
+      triesMultiplier = 100 - (right * 3);
       break;
     case "Díficil":
-      timeMultiplier = 0.9;
-      cardMultiplier = 2;
-      triesMultiplier = 0.9;
+      maxTimeScore = 10000;
+      maxTriesScore = 10000;
+      timeMultiplier = 40 - (right * 0.75);
+      triesMultiplier = 50 - (right * 1);
       break;
     default:
       break;
   }
+  let timeInSeconds = Number(minutes) * 60 + Number(seconds);
+  let timeScore = maxTimeScore - timeInSeconds * timeMultiplier; 
 
-  let timePontuation = (minutes * 60 + seconds) * timeMultiplier;
-  let triesPontuation = gameTries.tries * cardMultiplier;
-  let cardPontuation = gameTries.right * cardMultiplier;
+  let triesScore = maxTriesScore - tries * triesMultiplier;
 
-  let totalScore = Math.round(timePontuation * -1 + triesPontuation * -1 + cardPontuation);
-  console.log(totalScore);
-  return totalScore;
+  let totalScore = Math.round(timeScore + triesScore);
+ 
+  return totalScore > 0 ? totalScore : 0;
 }
