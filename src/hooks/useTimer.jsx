@@ -5,14 +5,6 @@ export default function useTimer() {
   const [timer, setTime] = useState(0);
   const intervalRef = useRef(null);
 
-  useEffect(() => {
-    startTimer();
-
-    return () => {
-      stopTimer();
-    };
-  }, []);
-
   function startTimer() {
     if (intervalRef != undefined) {
       intervalRef.current = setInterval(function () {
@@ -39,5 +31,5 @@ export default function useTimer() {
     return [minutesString, secondsString];
   }
 
-  return [getValues(), stopTimer];
+  return [getValues(), stopTimer, startTimer];
 }

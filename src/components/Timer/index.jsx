@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react"
-import useTimer from "../../hooks/useTimer"
 import { Container, TimerH1 } from "./styles";
 
 export default function Timer(props) {
-    const {minutes, seconds} = props;
+    const { time } = props;
+    const [minutes, seconds] = time;
 
     return(
         <Container>

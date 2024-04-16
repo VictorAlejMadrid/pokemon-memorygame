@@ -30,6 +30,7 @@ export const Container = styled.main`
   & > h2,
   p {
     color: #ffffff;
+    margin-bottom: 5px;
   }
 
   & > button:hover {
@@ -42,11 +43,11 @@ export const Container = styled.main`
     padding: 16px;
 
     & > h1 {
-        font-size: 1.8rem;
+      font-size: 1.8rem;
     }
 
-    &> h2 {
-        font-size: 1.25rem;
+    & > h2 {
+      font-size: 1.25rem;
     }
   }
 `;

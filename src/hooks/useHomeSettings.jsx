@@ -5,8 +5,10 @@ export function useHomeSettings() {
   const [dificult, setDificult] = useState("Fácil");
   const [options, setOptions] = useState([]);
   const [cardCount, setCardCount] = useState();
+  const [name, setName] = useState('');
 
   let homeSettings = {
+    name,
     dificult,
     options,
     cardCount,
@@ -29,5 +31,9 @@ export function useHomeSettings() {
     }
   }
 
-  return [homeSettings, setHomeSettings];
+  function setNewName(value) {
+    setName(value.trimStart());
+  }
+
+  return [homeSettings, setHomeSettings, setNewName];
 }

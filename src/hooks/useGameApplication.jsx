@@ -1,9 +1,10 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export default function useGameAplication(cardCount) {
+export default function useGameAplication(cardCount, stopTimer) {
   const prevCard = useRef(null);
   const [equal, setEqual] = useState(null);
   const [gameTries, setGameTries] = useState({ tries: 0, right: 0 });
+  const [gameEnded, setGameEnded] = useState(false);
 
   function checkCards(card) {
     if (prevCard.current == null) {
@@ -30,11 +31,25 @@ export default function useGameAplication(cardCount) {
       }
 
       prevCard.current = null;
+
+      // See if game ended
       if (cardCount - 1 == gameTries.right) {
-        console.log("acabo");
+        endGame();
       }
     }
   }
 
-  return [equal, gameTries, checkCards];
+  function resetGame() {
+    prevCard.current = null;
+    setEqual(null);
+    setGameTries({ tries: 0, right: 0 });
+    setGameEnded(false);
+    stopTimer();
+  }
+
+  function endGame() {
+    setGameEnded(true);
+  }
+
+  return [equal, gameTries, gameEnded, checkCards, resetGame];
 }

@@ -10,4 +10,8 @@ export const SelectContainer = styled.div`
     border-radius: 4px;
     border: none;
   }
+
+  & > p, & > select {
+    margin: 10px 0;
+  }
 `;
