@@ -12,7 +12,7 @@ export default function useImage(name) {
             const response = await import(`../assets/cards/${name}.png`);
             setImage(response.default);
         } catch (error) {
-            console.log('Não foi possível carregar a imagem.');
+            console.log(`Não foi possível carregar a imagem da carta do pokémon ${name}.`);
         }
     }
 
