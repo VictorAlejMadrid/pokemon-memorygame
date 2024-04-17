@@ -3,6 +3,7 @@ import CorrectAudio from '../assets/sounds/CorrectSound.mp3';
 import WrongAudio from '../assets/sounds/WrongSound.mp3';
 import VictoryAudio from '../assets/sounds/VictorySound.mp3';
 
+
 export default function useGameAplication(cardCount, stopTimer) {
   const prevCard = useRef(null);
   const [equal, setEqual] = useState(null);
@@ -12,6 +13,7 @@ export default function useGameAplication(cardCount, stopTimer) {
   const CorrectSound = new Audio(CorrectAudio);
   const WrongSound = new Audio(WrongAudio);
   const VictorySound = new Audio(VictoryAudio);
+  
 
   function checkCards(card) {
     if (prevCard.current == null) {
