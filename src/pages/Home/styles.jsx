@@ -48,27 +48,3 @@ export const Container = styled.main`
     }
   }
 `;
-
-export const Button = styled.button`
-  padding: 6px 24px;
-  border-radius: 12px;
-  border: none;
-  font-size: 2rem;
-  background-color: ${({ theme }) => theme.colors.pokeBlue};
-  color: #ffffff;
-  transition: transform ease 200ms;
-
-  @media screen and (max-width: 600px) {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    max-width: 200px;
-  }
-`;
-
-export const BackgroundAnimation = styled.video`
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-`;

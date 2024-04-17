@@ -9,6 +9,11 @@ export const Button = styled.button`
   color: #ffffff;
   transition: transform ease 200ms;
 
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
   @media screen and (max-width: 600px) {
     font-size: 1.25rem;
     margin-bottom: 10px;

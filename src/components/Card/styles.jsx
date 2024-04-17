@@ -26,6 +26,10 @@ export const CardFrontSide = styled.div`
   transform: ${(props) => (props.$clicked ? `rotateY(180deg)` : `rotateY(0deg)`)};
   transition: transform 0.6s ease;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media screen and (max-width: 1000px) {
     width: 100px;
     height: 140px;
