@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import ButtonContainer from "../../components/ButtonContainer";
 import SelectCardCount from "../../components/SelectCardCount";
 import InputText from "../../components/InputText/InputText";
-import { Page, Container, Button, BackgroundAnimation } from "./styles";
+import MainButton from "../../components/MainButton";
+import { Page, Container,} from "./styles";
 
 import BackgroundVideo from "../../assets/Videos/PikachuRunningVideo.mp4";
 import VideoAsBackground from "../../components/VideoAsBackground";
@@ -29,7 +30,7 @@ export default function Home(props) {
           <ButtonContainer array={dificults} special={dificult} click={setHomeSettings} />
 
           <Link to="/game">
-            <Button>Iniciar Jogo!</Button>
+            <MainButton>Iniciar Jogo!</MainButton>
           </Link>
         </Container>
       </Page>

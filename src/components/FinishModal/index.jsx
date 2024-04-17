@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Container, Modal } from "./styles";
-import { Button } from "../../pages/Home/styles";
+import MainButton from "../MainButton";
 
 export default function FinishModal(props) {
   const { homeSettings, gameTries } = props;
@@ -11,7 +11,7 @@ export default function FinishModal(props) {
     <Modal>
       <Container>
         <h1>Parabéns! {name} Você concluiu o jogo em {tries + right} tentativas!</h1>
-        <Link to='/scores'><Button>Ver minha pontuação!</Button></Link>
+        <Link to='/scores'><MainButton>Ver minha pontuação!</MainButton></Link>
       </Container>
     </Modal>
   );

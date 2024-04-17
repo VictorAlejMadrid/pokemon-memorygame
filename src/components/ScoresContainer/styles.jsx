@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ListContainer = styled.ul`
   width: 90%;
-  background-color: ${({ theme }) => theme.colors.pokeBlue}60;
+  background-color: ${({ theme }) => theme.colors.pokeBlue}bb;
   padding: 24px;
   border-radius: inherit;
   box-sizing: border-box;
