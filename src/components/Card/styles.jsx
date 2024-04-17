@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import back from '../../assets/cards/back.png';
 
 export const CardWrapper = styled.div`
   pointer-events: ${(props) => (props.$visible? props.$clickable ? "auto" : "none" : "none")};
@@ -19,7 +20,7 @@ export const CardFrontSide = styled.div`
   position: absolute;
   width: ${(props) => (props.$cardCount >= 15 ? "100px" : "175px")};
   height: ${(props) => (props.$cardCount >= 15 ? "140px" : "245px")};
-  background-image: url("/images/cards/back.png");
+  background-image: url(${(props) => props.$backImage});
   background-size: cover;
   backface-visibility: hidden;
   transform: ${(props) => (props.$clicked ? `rotateY(180deg)` : `rotateY(0deg)`)};
@@ -36,7 +37,7 @@ export const CardBackSide = styled.div`
   height: ${(props) => (props.$cardCount >= 15 ? "140px" : "245px")};
   position: absolute;
   backface-visibility: hidden;
-  background-image: url(${(props) => "/images/cards/" + props.$pokemon + ".png"});
+  background-image: url(${(props) => props.$pokemon});
   background-size: cover;
   transform: ${(props) => (props.$clicked ? `rotateY(0deg)` : `rotateY(-180deg)`)};
   transition: transform 0.6s ease;
