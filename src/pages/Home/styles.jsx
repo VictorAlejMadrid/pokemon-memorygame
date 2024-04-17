@@ -20,7 +20,9 @@ export const Container = styled.main`
   background-color: rgba(0, 0, 0, 0.5);
 
   & > h1 {
-    font-size: 2.5rem;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 800;
+    font-size: 2.6rem;
     color: #ffffff;
   }
 

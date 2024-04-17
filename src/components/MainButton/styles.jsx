@@ -8,6 +8,7 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.pokeBlue};
   color: #ffffff;
   transition: transform ease 200ms;
+  font-family: "Pixelify Sans", sans-serif;
 
   &:hover {
     cursor: pointer;

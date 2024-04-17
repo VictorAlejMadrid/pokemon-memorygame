@@ -23,8 +23,9 @@ export const Container = styled.div`
   margin: 10px;
 
   & > h1 {
+    font-family: "Pixelify Sans", sans-serif;
     margin: 10px;
-    font-size: 2.5rem;
+    font-size: 2.6rem;
   }
 
   @media screen and (max-width: 600px){
