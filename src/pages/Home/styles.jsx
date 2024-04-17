@@ -6,8 +6,6 @@ export const Page = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.pokeBlue};
-  background-image: url(${background});
   background-size: cover;
 `;
 
@@ -66,4 +64,10 @@ export const Button = styled.button`
     margin-bottom: 10px;
     max-width: 200px;
   }
+`;
+
+export const BackgroundAnimation = styled.video`
+  position: fixed;
+  width: 100%;
+  z-index: -1;
 `;
