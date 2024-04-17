@@ -6,6 +6,7 @@ import InputText from "../../components/InputText/InputText";
 import { Page, Container, Button, BackgroundAnimation } from "./styles";
 
 import BackgroundVideo from "../../assets/Videos/PikachuRunningVideo.mp4";
+import VideoAsBackground from "../../components/VideoAsBackground";
 
 export default function Home(props) {
   // very very clean muito lindo gostei bastante dos custom hooks lindo lindo :)
@@ -16,9 +17,7 @@ export default function Home(props) {
 
   return (
     <>
-      <BackgroundAnimation autoPlay loop muted className="bg-vid">
-        <source src={BackgroundVideo} type="video/mp4" />
-      </BackgroundAnimation>
+      <VideoAsBackground video={BackgroundVideo} />
       <Page>
         <Container>
           <h1>Bem-vindo ao Jogo da Memória do Pokémon!</h1>

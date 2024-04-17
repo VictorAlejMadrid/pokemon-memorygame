@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import background from "../../assets/images/pokemon-background.jpg";
 
 export const Page = styled.section`
   height: 100vh;
@@ -69,5 +68,7 @@ export const Button = styled.button`
 export const BackgroundAnimation = styled.video`
   position: fixed;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: -1;
 `;

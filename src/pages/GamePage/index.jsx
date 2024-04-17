@@ -1,6 +1,5 @@
 import { Section } from "./styles";
 
-import Header from "../../components/Header";
 import CardContainer from "../../components/CardContainer";
 import Timer from "../../components/Timer";
 
@@ -9,20 +8,37 @@ import useGameStart from "../../hooks/useGameStart";
 import FinishModal from "../../components/FinishModal";
 import useCheckGameStatus from "../../hooks/useCheckGameStatus";
 
+import BackgroundVideo from "../../assets/Videos/PokemonSeaVideo.mp4"; 
+import VideoAsBackground from "../../components/VideoAsBackground";
+
 export default function GamePage(props) {
-  const { homeSettings, time, startTimer, equal, checkCards, resetGame, gameEnded, setNewPlayer, gameTries } = props;
-  const { cardCount, dificult } = homeSettings;
+  const {
+    homeSettings,
+    time,
+    startTimer,
+    equal,
+    checkCards,
+    resetGame,
+    gameEnded,
+    setNewPlayer,
+    gameTries,
+  } = props;
+  const { cardCount } = homeSettings;
 
   const cards = useCardsArray(cardCount);
-  useGameStart(startTimer, resetGame, cardCount );
+  useGameStart(startTimer, resetGame, cardCount);
   const finishVisibility = useCheckGameStatus(gameEnded, setNewPlayer);
 
   return (
-    <Section>
-      <Header dificult={dificult} />
-      <Timer time={time} />
-      <CardContainer equal={equal} checkCards={checkCards} cards={cards} cardCount={cardCount} />
-      {finishVisibility ? <FinishModal homeSettings={homeSettings} gameTries={gameTries} /> : null}
-    </Section>
+    <>
+    <VideoAsBackground video={BackgroundVideo} />
+      <Section>
+        <Timer time={time} />
+        <CardContainer equal={equal} checkCards={checkCards} cards={cards} cardCount={cardCount} />
+        {finishVisibility ? (
+          <FinishModal homeSettings={homeSettings} gameTries={gameTries} />
+        ) : null}
+      </Section>
+    </>
   );
 }
