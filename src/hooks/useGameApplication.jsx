@@ -13,7 +13,6 @@ export default function useGameAplication(cardCount, stopTimer) {
   const CorrectSound = new Audio(CorrectAudio);
   const WrongSound = new Audio(WrongAudio);
   const VictorySound = new Audio(VictoryAudio);
-  
 
   function checkCards(card) {
     if (prevCard.current == null) {
@@ -43,7 +42,7 @@ export default function useGameAplication(cardCount, stopTimer) {
 
       prevCard.current = null;
 
-      // See if game ended
+      // Check if game ended
       if (cardCount - 1 == gameTries.right) {
         VictorySound.play();
         endGame();

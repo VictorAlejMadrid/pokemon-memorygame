@@ -14,7 +14,7 @@ export default function FinishModal(props) {
     <Modal>
       <Container>
         <h1>Parabéns, {name}! Você concluiu o jogo em {tries + right} tentativas!</h1>
-        <Img src={Trophy}/>
+        <Img src={Trophy} alt="Imagem de um troféu"/>
         <Link to='/scores'><MainButton>Ver minha pontuação!</MainButton></Link>
       </Container>
     </Modal>

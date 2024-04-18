@@ -8,7 +8,7 @@ export const ListContainer = styled.ul`
   box-sizing: border-box;
   margin-bottom: 32px;
   height: 500px;
-  overflow-y: hidden;
+  overflow-y: scroll;
 
   & > li {
     width: 100%;
@@ -25,9 +25,21 @@ export const ListContainer = styled.ul`
 export const ListLabels = styled.li`
   & > h3 {
     font-size: 1.5rem;
+    font-weight: 700;
   }
 
   & > span {
     font-size: 1.5rem !important;
+    font-weight: 700;
+  }
+
+  @media screen and (max-width: 600px) {
+    & > h3 {
+      font-size: 1.2rem;
+    }
+
+    & > span {
+      font-size: 1.2rem !important; 
+    }
   }
 `;

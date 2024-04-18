@@ -2,14 +2,14 @@ import { Section } from "./styles";
 
 import CardContainer from "../../components/CardContainer";
 import Timer from "../../components/Timer";
+import FinishModal from "../../components/FinishModal";
+import VideoAsBackground from "../../components/VideoAsBackground";
 
 import useCardsArray from "../../hooks/useCardsArray";
 import useGameStart from "../../hooks/useGameStart";
-import FinishModal from "../../components/FinishModal";
 import useCheckGameStatus from "../../hooks/useCheckGameStatus";
 
 import BackgroundVideo from "../../assets/Videos/PokemonSeaVideo.mp4"; 
-import VideoAsBackground from "../../components/VideoAsBackground";
 
 export default function GamePage(props) {
   const {

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import GameSoundtrack from "../assets/sounds/GameSoundtrack.mp3";
 
 export default function useGameStart(startTimer, resetGame, cardCount) {

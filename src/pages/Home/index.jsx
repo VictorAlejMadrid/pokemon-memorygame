@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
+import { Page, Container, Img } from "./styles";
 import ButtonContainer from "../../components/ButtonContainer";
 import SelectCardCount from "../../components/SelectCardCount";
 import InputText from "../../components/InputText/InputText";
 import MainButton from "../../components/MainButton";
-import { Page, Container, Img } from "./styles";
 
 import BackgroundVideo from "../../assets/Videos/PikachuRunningVideo.mp4";
 import VideoAsBackground from "../../components/VideoAsBackground";
