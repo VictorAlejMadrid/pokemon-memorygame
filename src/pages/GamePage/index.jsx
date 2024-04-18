@@ -9,7 +9,7 @@ import useCardsArray from "../../hooks/useCardsArray";
 import useGameStart from "../../hooks/useGameStart";
 import useCheckGameStatus from "../../hooks/useCheckGameStatus";
 
-import BackgroundVideo from "../../assets/Videos/PokemonSeaVideo.mp4"; 
+import BackgroundVideo from "../../assets/Videos/PokemonSeaVideo.mp4";
 
 export default function GamePage(props) {
   const {
