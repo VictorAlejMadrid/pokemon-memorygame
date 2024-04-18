@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { setMaxCards } from "../utils";
 
-export function useHomeSettings() {
+export default function useHomeSettings() {
   const [dificult, setDificult] = useState("Fácil");
   const [options, setOptions] = useState([]);
   const [cardCount, setCardCount] = useState();

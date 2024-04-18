@@ -3,7 +3,7 @@ import GamePage from "./pages/GamePage";
 import Home from "./pages/Home";
 
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { useHomeSettings } from "./hooks/useHomeSettings";
+import useHomeSettings from "./hooks/useHomeSettings";
 import useTimer from "./hooks/useTimer";
 import useGameAplication from "./hooks/useGameApplication";
 import useSetPontuation from "./hooks/useSetPontuation";

@@ -9,6 +9,7 @@ export const Button = styled.button`
   color: #ffffff;
   transition: transform ease 200ms;
   font-family: "Pixelify Sans", sans-serif;
+  margin-top: 10px;
 
   &:hover {
     cursor: pointer;

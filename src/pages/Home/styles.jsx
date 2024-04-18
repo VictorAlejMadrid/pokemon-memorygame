@@ -6,6 +6,7 @@ export const Page = styled.section`
   align-items: center;
   justify-content: center;
   background-size: cover;
+  flex-direction: column;
 `;
 
 export const Container = styled.main`
@@ -49,4 +50,10 @@ export const Container = styled.main`
       font-size: 1.25rem;
     }
   }
+`;
+
+export const Img = styled.img`
+  width: 30px;
+  margin-bottom: -5px;
+  height: auto;  
 `;

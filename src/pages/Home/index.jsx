@@ -4,10 +4,11 @@ import ButtonContainer from "../../components/ButtonContainer";
 import SelectCardCount from "../../components/SelectCardCount";
 import InputText from "../../components/InputText/InputText";
 import MainButton from "../../components/MainButton";
-import { Page, Container,} from "./styles";
+import { Page, Container, Img } from "./styles";
 
 import BackgroundVideo from "../../assets/Videos/PikachuRunningVideo.mp4";
 import VideoAsBackground from "../../components/VideoAsBackground";
+import Trophy from "../../assets/images/TrophyIcon.png";
 
 export default function Home(props) {
   // very very clean muito lindo gostei bastante dos custom hooks lindo lindo :)
@@ -33,6 +34,11 @@ export default function Home(props) {
             <MainButton>Iniciar Jogo!</MainButton>
           </Link>
         </Container>
+        <Link to="/scores">
+          <MainButton>
+            <Img src={Trophy} alt="Imagem de um troféu" />
+          </MainButton>
+        </Link>
       </Page>
     </>
   );
